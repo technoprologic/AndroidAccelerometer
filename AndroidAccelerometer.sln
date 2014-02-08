@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myOxyPlot", "myOxyPlot\myOxyPlot.csproj", "{6E407FB5-7360-4D6B-ADBD-B6C2009AF53D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidAccelerometer", "myOxyPlot\AndroidAccelerometer.csproj", "{6E407FB5-7360-4D6B-ADBD-B6C2009AF53D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
