@@ -19,7 +19,6 @@ namespace myOxyPlot
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            //xcvvdfddsffsdfdf
             // Create your application here
             SetContentView(Resource.Layout.AxisChoice);
 
