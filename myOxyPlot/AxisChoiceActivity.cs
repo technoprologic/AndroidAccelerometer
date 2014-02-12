@@ -19,7 +19,7 @@ namespace myOxyPlot
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
+            //xcvv
             // Create your application here
             SetContentView(Resource.Layout.AxisChoice);
 
