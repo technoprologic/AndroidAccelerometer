@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="Theme.Splash" parent="android:Theme">
+    <item name="android:windowBackground">@drawable/welcom</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:gravity">center</item>
+  </style>
+  <style name="Theme.NotSupported" parent="android:Theme">
+    <item name="android:windowBackground">@drawable/error</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+</resources>
+

@@ -2,18 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@drawable/Welcom">
 <!--<Button
         android:id="@+id/MyButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/Hello" />-->
-    <ImageView
+<!--<ImageView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/welcomImage"
         android:src="@drawable/Welcom"
         android:scaleType="fitCenter"
         android:background="@color/white"
-        android:clickable="true" />
+        android:clickable="true" />-->
 </LinearLayout>

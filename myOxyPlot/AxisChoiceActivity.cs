@@ -30,13 +30,26 @@ namespace myOxyPlot
             CheckBox boxY = FindViewById<CheckBox>(Resource.Id.yAxisCheckBox);
             CheckBox boxZ = FindViewById<CheckBox>(Resource.Id.zAxisCheckBox);
 
+            //button.Click += delegate
+            //{
+            //    //var plotActivity = new Intent(this, typeof(OxyPlotActivity));
+            //    //plotActivity.PutExtra("X", boxX.Checked);
+            //    //plotActivity.PutExtra("Y", boxY.Checked);
+            //    //plotActivity.PutExtra("Z", boxZ.Checked);
+            //    //StartActivity(typeof(Wykres));
+            //    Intent i = new Intent(ApplicationContext, typeof(Wykres));
+            //    i.PutExtra("new_variable_name", "value");
+            //    StartActivity(typeof(Wykres));
+            //};
+
             button.Click += delegate
             {
-                var plotActivity = new Intent(this, typeof(OxyPlotActivity));
-                plotActivity.PutExtra("X", boxX.Checked);
-                plotActivity.PutExtra("Y", boxY.Checked);
-                plotActivity.PutExtra("Z", boxZ.Checked);
-                StartActivity(typeof(Wykres));
+                var activity = new Intent(this, typeof(Wykres));
+                activity.PutExtra("MyData", true);
+                activity.PutExtra("X", boxX.Checked);
+                activity.PutExtra("Y", boxY.Checked);
+                activity.PutExtra("Z", boxZ.Checked);
+                StartActivity(activity);
             };
         }
     }
