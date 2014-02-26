@@ -2,7 +2,6 @@ using System.Threading;
 using Android.App;
 using Android.OS;
 using Android.Hardware;
-
 using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;
@@ -10,18 +9,20 @@ using OxyPlot.XamarinAndroid;
 
 namespace myOxyPlot
 {
-    [Activity(Label = "Live plot", ScreenOrientation=Android.Content.PM.ScreenOrientation.Landscape)]
+    [Activity(Theme = "@style/Theme.Plot", ScreenOrientation=Android.Content.PM.ScreenOrientation.Landscape)]
     public class Wykres : Activity, ISensorEventListener
     {
         private static readonly object _syncLock = new object();
+        private const int timeLineLength = 15;
         private SensorManager _sensorManager;
-        private bool x, y, z;
+        private bool x=false, y=false, z=false;
         private double xVal, yVal, zVal;
         private int timeIntervalCounter = 0;
-        LineSeries sX, sY, sZ;
-        PlotModel model;
-        PlotView plotView;
-        string plotTitle = "Accelerometer";
+        private LineSeries sX, sY, sZ;
+        private Plot model;
+        private PlotView plotView;
+        private string plotTitle = "Accelerometer";
+        private int accuracyOfDecimal = 5;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -31,13 +32,20 @@ namespace myOxyPlot
             xVal = 0;
             yVal = 0;
             zVal = 0;
+            
             x = Intent.GetBooleanExtra("X", false);
             y = Intent.GetBooleanExtra("Y", false);
             z = Intent.GetBooleanExtra("Z", false);
 
             _sensorManager = (SensorManager)GetSystemService(SensorService);
             plotView = FindViewById<PlotView>(Resource.Id.plotview);
-            model = new PlotModel(plotTitle);
+            model = new Plot(plotTitle)
+            {
+                Title = plotTitle,
+                Background = OxyColors.Black,
+                PlotAreaBorderColor = OxyColors.Gray,
+                TextColor = OxyColors.White
+            };
             
             if(x)
             {
@@ -79,7 +87,7 @@ namespace myOxyPlot
         protected override void OnResume()
         {
             base.OnResume();
-            _sensorManager.RegisterListener(this, _sensorManager.GetDefaultSensor(SensorType.Accelerometer), SensorDelay.Normal);
+            _sensorManager.RegisterListener(this, _sensorManager.GetDefaultSensor(SensorType.Accelerometer), SensorDelay.Ui);
         }
 
         protected override void OnPause()
@@ -112,28 +120,43 @@ namespace myOxyPlot
                     model.ResetAllAxes();
                     model.Annotations.Clear();
                     model.Series.Clear();
-                    model = new PlotModel(plotTitle);
+                    model = new Plot(plotTitle);
+                    model.Axes.Add(new LinearAxis(AxisPosition.Bottom, -timeLineLength + timeIntervalCounter, timeIntervalCounter)
+                        {
+                            Title = "sec"
+                        });
+
                     if (x)
                     {
-                        sX.Points.Add(new DataPoint(timeIntervalCounter++, xVal));
+                        sX.Points.Add(new DataPoint(timeIntervalCounter, xVal));
                         model.Series.Add(sX);
+                        sX.Title = "X:  " + xVal.ToString().Substring(0, 2 + accuracyOfDecimal) + "  m/s^2";
                     }
                     if (y)
                     { 
-                        sY.Points.Add(new DataPoint(timeIntervalCounter++, yVal));
+                        sY.Points.Add(new DataPoint(timeIntervalCounter, yVal));
                         model.Series.Add(sY);
+                        sY.Title = "Y:  " + yVal.ToString().Substring(0, 2 + accuracyOfDecimal) + "  m/s^2";
                     }
                     if (z)
                     {
-                        sZ.Points.Add(new DataPoint(timeIntervalCounter++, zVal));
+                        sZ.Points.Add(new DataPoint(timeIntervalCounter, zVal));
                         model.Series.Add(sZ);
+                        sZ.Title = "Z:  " + zVal.ToString().Substring(0, 2 + accuracyOfDecimal) + "  m/s^2";
                     }
-                    //if (timeIntervalCounter > 10)
-                    //   model.DefaultXAxis.EndPosition = 20;
+                    
+                    if (timeIntervalCounter > timeLineLength)
+                    {
+                        if (x) sX.Points.RemoveAt(0);
+                        if (y) sY.Points.RemoveAt(0);
+                        if (z) sZ.Points.RemoveAt(0);
+                    }
+
+                    timeIntervalCounter++;
                     plotView.Model = model;
                 });
                 Thread.Sleep(1000);
             }
-        }
+        }     
     }
 }

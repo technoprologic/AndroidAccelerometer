@@ -5,8 +5,14 @@
     <item name="android:windowNoTitle">true</item>
     <item name="android:gravity">center</item>
   </style>
+  <style name="Theme.AxesChoice" parent="android:Theme">
+    <item name="android:windowNoTitle">true</item>
+  </style>
   <style name="Theme.NotSupported" parent="android:Theme">
     <item name="android:windowBackground">@drawable/error</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+  <style name="Theme.Plot" parent="android:Theme">
     <item name="android:windowNoTitle">true</item>
   </style>
 </resources>

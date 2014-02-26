@@ -82,20 +82,23 @@ namespace myOxyPlot
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070003
-			public const int ConfirmButton = 2131165187;
-			
 			// aapt resource value: 0x7f070004
-			public const int plotview = 2131165188;
+			public const int ConfirmButton = 2131165188;
 			
 			// aapt resource value: 0x7f070000
-			public const int xAxisCheckBox = 2131165184;
+			public const int dialog = 2131165184;
+			
+			// aapt resource value: 0x7f070005
+			public const int plotview = 2131165189;
 			
 			// aapt resource value: 0x7f070001
-			public const int yAxisCheckBox = 2131165185;
+			public const int xAxisCheckBox = 2131165185;
 			
 			// aapt resource value: 0x7f070002
-			public const int zAxisCheckBox = 2131165186;
+			public const int yAxisCheckBox = 2131165186;
+			
+			// aapt resource value: 0x7f070003
+			public const int zAxisCheckBox = 2131165187;
 			
 			static Id()
 			{
@@ -167,7 +170,13 @@ namespace myOxyPlot
 		{
 			
 			// aapt resource value: 0x7f060001
-			public const int Theme_NotSupported = 2131099649;
+			public const int Theme_AxesChoice = 2131099649;
+			
+			// aapt resource value: 0x7f060002
+			public const int Theme_NotSupported = 2131099650;
+			
+			// aapt resource value: 0x7f060003
+			public const int Theme_Plot = 2131099651;
 			
 			// aapt resource value: 0x7f060000
 			public const int Theme_Splash = 2131099648;

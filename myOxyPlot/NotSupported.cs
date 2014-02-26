@@ -1,6 +1,5 @@
 using Android.App;
 using Android.OS;
-using Android.Hardware;
 using System.Threading;
 
 namespace myOxyPlot
