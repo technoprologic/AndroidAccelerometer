@@ -96,8 +96,6 @@
     <AndroidResource Include="Resources\Drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="OxyPlot.dll" />
-    <Content Include="OxyPlot.XamarinAndroid.dll" />
     <Content Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </Content>
