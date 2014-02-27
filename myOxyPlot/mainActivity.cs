@@ -16,8 +16,6 @@ namespace myOxyPlot
             base.OnCreate(bundle);
             Thread.Sleep(3000);
 
-
-
             _sensorManager = (SensorManager)GetSystemService(SensorService);
             _accelerometerSensor = _sensorManager.GetDefaultSensor(SensorType.Accelerometer);
 
