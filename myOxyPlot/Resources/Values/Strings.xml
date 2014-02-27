@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ApplicationName">Accelerometer Visualization</string>
+    <string name="AxesToPlot">Choose axes You want to plot</string>
+    <string name="xAxis">X Axis</string>
+    <string name="yAxis">Y Axis</string>
+    <string name="zAxis">Z Axis</string>
+    <string name="ConfirmButton">Confirm</string>
+</resources>

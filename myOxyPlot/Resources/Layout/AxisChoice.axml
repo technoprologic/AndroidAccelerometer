@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/AxesToPlot"
+        android:textColor="#ff0fffff"
+        android:id="@+id/dialog"
+        android:textStyle="normal"
+        android:gravity="center"
+        android:textSize="20dp" />
+    <CheckBox
+        android:id="@+id/xAxisCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/xAxis" />
+    <CheckBox
+        android:id="@+id/yAxisCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/yAxis" />
+    <CheckBox
+        android:id="@+id/zAxisCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/zAxis" />
+    <Button
+        android:id="@+id/ConfirmButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ConfirmButton" />
+</LinearLayout>
