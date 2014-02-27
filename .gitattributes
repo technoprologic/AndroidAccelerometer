@@ -34,7 +34,6 @@
 #*.modelproj merge=binary
 #*.sqlproj   merge=binary
 #*.wwaproj   merge=binary
-#*.dll		 merge=binary
 
 ###############################################################################
 # behavior for image files
@@ -44,6 +43,7 @@
 #*.jpg   binary
 #*.png   binary
 #*.gif   binary
+#*.dll   binary
 
 ###############################################################################
 # diff behavior for common document formats
