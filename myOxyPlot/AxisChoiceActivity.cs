@@ -16,6 +16,7 @@ namespace myOxyPlot
             // Create your application here
             SetContentView(Resource.Layout.AxisChoice);
 
+
             // Get our button from the layout resource,
             // and attach an event to it
             Button button = FindViewById<Button>(Resource.Id.ConfirmButton);
