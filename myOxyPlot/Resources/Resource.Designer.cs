@@ -44,6 +44,9 @@ namespace myOxyPlot
 		public partial class Color
 		{
 			
+			// aapt resource value: 0x7f040001
+			public const int goldronze = 2130968577;
+			
 			// aapt resource value: 0x7f040000
 			public const int white = 2130968576;
 			
@@ -82,29 +85,47 @@ namespace myOxyPlot
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070004
-			public const int ConfirmButton = 2131165188;
-			
 			// aapt resource value: 0x7f070005
-			public const int LinearLayout01 = 2131165189;
+			public const int ConfirmButton = 2131165189;
 			
 			// aapt resource value: 0x7f070006
-			public const int TextView01 = 2131165190;
+			public const int LinearLayout01 = 2131165190;
 			
 			// aapt resource value: 0x7f070000
-			public const int dialog = 2131165184;
+			public const int LinearLayout02 = 2131165184;
+			
+			// aapt resource value: 0x7f070009
+			public const int LinearLayout03 = 2131165193;
 			
 			// aapt resource value: 0x7f070007
-			public const int plotview = 2131165191;
+			public const int TextView01 = 2131165191;
+			
+			// aapt resource value: 0x7f070008
+			public const int TextView02 = 2131165192;
+			
+			// aapt resource value: 0x7f07000a
+			public const int TextView03 = 2131165194;
+			
+			// aapt resource value: 0x7f07000b
+			public const int TextView04 = 2131165195;
+			
+			// aapt resource value: 0x7f07000c
+			public const int TextView05 = 2131165196;
 			
 			// aapt resource value: 0x7f070001
-			public const int xAxisCheckBox = 2131165185;
+			public const int dialog = 2131165185;
+			
+			// aapt resource value: 0x7f07000d
+			public const int plotview = 2131165197;
 			
 			// aapt resource value: 0x7f070002
-			public const int yAxisCheckBox = 2131165186;
+			public const int xAxisCheckBox = 2131165186;
 			
 			// aapt resource value: 0x7f070003
-			public const int zAxisCheckBox = 2131165187;
+			public const int yAxisCheckBox = 2131165187;
+			
+			// aapt resource value: 0x7f070004
+			public const int zAxisCheckBox = 2131165188;
 			
 			static Id()
 			{

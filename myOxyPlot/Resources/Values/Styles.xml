@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
   <style name="Theme.Splash" parent="android:Theme">
-    <!--<item name="android:windowBackground">@drawable/Welcom</item>-->
     <item name="android:windowNoTitle">true</item>
-    <item name="android:gravity">center</item>
+    <item name="android:background">#FFFFFF</item>
+    <item name="android:colorBackground">#FFFFFF</item>
   </style>
   <style name="Theme.AxesChoice" parent="android:Theme">
     <item name="android:windowNoTitle">true</item>
   </style>
   <style name="Theme.NotSupported" parent="android:Theme">
-    <item name="android:windowBackground">@drawable/error</item>
     <item name="android:windowNoTitle">true</item>
   </style>
   <style name="Theme.Plot" parent="android:Theme">

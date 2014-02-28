@@ -12,17 +12,16 @@ namespace myOxyPlot
     [Activity(Theme = "@style/Theme.Plot", ScreenOrientation=Android.Content.PM.ScreenOrientation.Landscape)]
     public class Wykres : Activity, ISensorEventListener
     {
-        private static readonly object _syncLock = new object();
+        private string plotTitle = "ACCELEROMETER 2D GRAPH";
         private const int timeLineLength = 15;
-        private SensorManager _sensorManager;
         private bool x=false, y=false, z=false;
         private double xVal, yVal, zVal;
         private int timeIntervalCounter = 0;
         private LineSeries sX, sY, sZ;
         private Plot model;
         private PlotView plotView;
-        private string plotTitle = "Accelerometer";
-        private int accuracyOfDecimal = 5;
+        private static readonly object _syncLock = new object();
+        private SensorManager _sensorManager;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -111,10 +110,13 @@ namespace myOxyPlot
             }
         }
 
+
+
         private void Draw()
         {
             while (true)
             {
+                
                 RunOnUiThread(delegate
                 {
                     model.ResetAllAxes();
@@ -123,26 +125,27 @@ namespace myOxyPlot
                     model = new Plot(plotTitle);
                     model.Axes.Add(new LinearAxis(AxisPosition.Bottom, -timeLineLength + timeIntervalCounter, timeIntervalCounter)
                         {
-                            Title = "sec"
+                            Title = "SECONDS",
+                            TitleColor = OxyColors.DarkOrange
                         });
 
                     if (x)
                     {
                         sX.Points.Add(new DataPoint(timeIntervalCounter, xVal));
                         model.Series.Add(sX);
-                        sX.Title = "X:  " + xVal.ToString().Substring(0, 2 + accuracyOfDecimal) + "  m/s^2";
+                        sX.Title = "X:  " + xVal.ToString() + "  m/s^2";
                     }
                     if (y)
                     { 
                         sY.Points.Add(new DataPoint(timeIntervalCounter, yVal));
                         model.Series.Add(sY);
-                        sY.Title = "Y:  " + yVal.ToString().Substring(0, 2 + accuracyOfDecimal) + "  m/s^2";
+                        sY.Title = "Y:  " + yVal.ToString() + "  m/s^2";
                     }
                     if (z)
                     {
                         sZ.Points.Add(new DataPoint(timeIntervalCounter, zVal));
                         model.Series.Add(sZ);
-                        sZ.Title = "Z:  " + zVal.ToString().Substring(0, 2 + accuracyOfDecimal) + "  m/s^2";
+                        sZ.Title = "Z:  " + zVal.ToString() + "  m/s^2";
                     }
                     
                     if (timeIntervalCounter > timeLineLength)
