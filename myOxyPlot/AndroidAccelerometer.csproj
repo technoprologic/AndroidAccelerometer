@@ -47,11 +47,13 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="OxyPlot">
-      <HintPath>..\..\..\myOxyPlot\myOxyPlot\bin\Debug\OxyPlot.dll</HintPath>
+    <Reference Include="OxyPlot, Version=2014.1.1.1, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\OxyPlot.dll</HintPath>
     </Reference>
-    <Reference Include="OxyPlot.XamarinAndroid">
-      <HintPath>..\..\..\myOxyPlot\myOxyPlot\bin\Debug\OxyPlot.XamarinAndroid.dll</HintPath>
+    <Reference Include="OxyPlot.XamarinAndroid, Version=2014.1.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\OxyPlot.XamarinAndroid.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -94,6 +96,12 @@
     <AndroidResource Include="Resources\Drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Libraries\OxyPlot.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libraries\OxyPlot.XamarinAndroid.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </Content>
